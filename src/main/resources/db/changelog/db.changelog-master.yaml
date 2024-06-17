@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/master/2023-12-04_1-create-reader-and-book-entity.yaml
+  - include:
+      file: db/changelog/master/2024-06-14_3-create-borrow-entity.yaml
+  - include:
+      file: db/changelog/master/2024-06-14_4-add-column-author-to-books.yaml
+  - include:
+      file: db/changelog/master/2024-06-14_5-add-view-borrows_books_with_author.yaml
+#  - include:
+#      file: db/changelog/master/2024-06-14_4-add-column-author-to-books.yaml
+#  - include:
+#      file: db/changelog/master/2023-12-04_2-add-relation-books-readers.yaml
+#  - include:
+#      file: db/changelog/master/2023-12-04_3-create-borrow-entity.yaml
+#  - include:
+#      file: db/changelog/master/2023-12-04_6-add-statistics-view.yaml
+#  - include:
+#      file: db/changelog/master/2023-12-05-update-surname.yaml

@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: modify-surname-column-length
+      author: Przemysław Gęsieniec
+      changes:
+        - modifyDataType:
+            tableName: readers
+            columnName: surname
+            newDataType: varchar(200)
+#        - createIndex:
+#            tableName: readers
+#            indexName: idx_readers_surname
+#            columns:
+#              - column:
+#                  name: surname

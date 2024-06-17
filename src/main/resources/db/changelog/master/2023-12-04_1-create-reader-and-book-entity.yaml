@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-reader-and-books-table
+      author: Przemysław Gęsieniec
+      changes:
+        - createTable:
+            tableName: readers
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: reader_technical_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(300)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: books
+            columns:
+             - column:
+                 name: id
+                 type: bigint
+                 constraints:
+                   primaryKey: true
+                   nullable: false
+                   autoIncrement: true
+             - column:
+                 name: isbn
+                 type: varchar(255)
+                 constraints:
+                   nullable: false
+                   unique: true
+             - column:
+                 name: title
+                 type: varchar(255)
+                 constraints:
+                   nullable: false
+             - column:
+                 name: author
+                 type: varchar(255)
+
+
+

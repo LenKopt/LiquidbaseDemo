@@ -1,0 +1,16 @@
+databaseChangeLog:
+  -  changeSet:
+       id: addColumn-author
+       author: Alena Iadkouskaya
+       changes:
+         - renameColumn:
+             tableName: books
+             oldColumnName: author
+             newColumnName: name_author
+             columnDataType: varchar(100)
+         - addColumn:
+             tableName: books
+             columns:
+               - column:
+                   name: last_name_author
+                   type: varchar(100)

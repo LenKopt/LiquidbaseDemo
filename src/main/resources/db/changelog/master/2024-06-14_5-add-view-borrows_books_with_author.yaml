@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: addViewBorrowsBooks
+      author: Alena Iadkouskaya
+      changes:
+        - sql:
+            "CREATE VIEW borrow_books AS
+              SELECT COUNT(*) * 100.0 / SUM(COUNT(*)) OVER () AS percent, name_author, last_name_author
+              FROM (
+                SELECT
+                bb.book_id, b.name_author, b.last_name_author
+                FROM borrows bb
+                JOIN books b ON bb.book_id = b.id
+                WHERE bb.return_date IS NULL
+                )
+              GROUP BY name_author, last_name_author;"

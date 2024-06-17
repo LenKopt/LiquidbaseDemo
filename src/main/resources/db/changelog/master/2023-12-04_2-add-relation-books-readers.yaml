@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: add relation
+      author: Przemysław Gęsieneic
+      changes:
+        - addColumn:
+            tableName: books
+            columns:
+              - column:
+                  name: reader_id
+                  type: bigint
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_books_readers
+                    references: readers(id)
