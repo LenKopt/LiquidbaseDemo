@@ -13,4 +13,5 @@ databaseChangeLog:
                 JOIN books b ON bb.book_id = b.id
                 WHERE bb.return_date IS NULL
                 )
-              GROUP BY name_author, last_name_author;"
+              GROUP BY name_author, last_name_author
+              ORDER BY percent desc, name_author, last_name_author;"
