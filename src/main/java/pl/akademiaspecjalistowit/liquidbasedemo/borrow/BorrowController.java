@@ -32,6 +32,6 @@ public class BorrowController {
 
     @GetMapping
     public List<BorrowsBooksStatistics> getAllByMyQuery() {
-        return borrowBooks.getAllBy();
+        return borrowBooks.findAll();
     }
 }
